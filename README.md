@@ -1,4 +1,4 @@
-# cloudflare-update
+# cloudflare-update-ipv6-DNS-AAAA
 Cloudflare DNS record update periodically - AAAA record for ipv6
 
 more info on running and cron

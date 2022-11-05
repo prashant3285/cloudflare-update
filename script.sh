@@ -18,6 +18,15 @@ ipv6_suffix='add here without quote mark fixed part of ipv6'
 #     exit 1
 # fi
 
+###  Create .update-cloudflare-dns.log file of the last run for debug
+parent_path="$(dirname "${BASH_SOURCE[0]}")"
+FILE=${parent_path}/update-cloudflare-dns.log
+if ! [ -x "$FILE" ]; then
+  touch "$FILE"
+fi
+
+LOG_FILE=${parent_path}'/update-cloudflare-dns.log'
+
 # Check if jq is installed
 check_jq=$(which jq)
 if [ -z "${check_jq}" ]; then

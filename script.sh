@@ -27,6 +27,10 @@ fi
 
 LOG_FILE=${parent_path}'/update-cloudflare-dns.log'
 
+### Write last run of STDOUT & STDERR as log file and prints to screen
+exec > >(tee $LOG_FILE) 2>&1
+echo "==> $(date "+%Y-%m-%d %H:%M:%S")"
+
 # Check if jq is installed
 check_jq=$(which jq)
 if [ -z "${check_jq}" ]; then
